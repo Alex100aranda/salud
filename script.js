@@ -66,7 +66,7 @@ function enviarPedidoPorWhatsApp() {
   const total = carrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
   mensaje += `\nTotal: $${total.toFixed(2)}`;
 
-  const telefono = '5211234567890'; // Cambia por tu número
+  const telefono = '5215536659768'; // Cambia por tu número
   const urlWhatsApp = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
   window.open(urlWhatsApp, '_blank');
