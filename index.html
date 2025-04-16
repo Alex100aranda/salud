@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaludTotal - Productos de Salud en Línea</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+<!-- Header -->
+<header class="header-delgado">
+  <div class="container">
+    <h1 class="logo">SaludTotal</h1>
+    <nav>
+      <ul>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Ícono de carrito con contador -->
+    <div id="carrito-icono" class="carrito-icono">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="contador-carrito" class="contador-carrito">0</span>
+    </div>
+  </div>
+</header>
+
+
+<!-- Modal Carrito -->
+<div class="modal-carrito" id="modalCarrito" style="display: none;">
+  <div class="modal-content">
+    <span class="close-modal" onclick="cerrarCarrito()">&times;</span>
+    <h3>🛒 Tu carrito</h3>
+    <ul id="lista-carrito"></ul>
+    <p class="total-carrito">Total: $<span id="totalCarrito">0</span></p>
+    <button class="btn-wsp" onclick="enviarPedidoPorWhatsApp()">Hacer pedido por WhatsApp</button>
+  </div>
+</div>
+
+
+<!-- Hero -->
+<section class="hero" data-aos="fade">
+  <div class="container">
+    <h2 data-aos="fade-down" data-aos-delay="100">Cuida tu salud, naturalmente</h2>
+    <p class="badge-hero" data-aos="zoom-in" data-aos-delay="300">✅ Más de 10,000 clientes felices</p>
+    <p data-aos="fade-up" data-aos-delay="400">Encuentra productos naturales y suplementos para tu bienestar.</p>
+    <a href="#productos" class="btn" data-aos="zoom-in" data-aos-delay="600">Ver productos</a>
+  </div>
+</section>
+
+
+<!-- Productos -->
+<section id="productos" class="productos">
+  <div class="container">
+    <h2>Productos destacados</h2>
+    <div class="grid">
+
+      <div class="card" data-aos="fade-up">
+        <img src="images/vitamina.jpeg" alt="Vitamina C natural">
+        <h3>Vitamina C Natural</h3>
+        <p>Refuerza tu sistema inmunológico de forma natural.</p>
+        <p class="precio">$250</p>
+        <button 
+          class="agregar-carrito"
+          data-nombre="Vitamina C Natural" 
+          data-precio="250"
+          data-cantidad="1"
+        >Agregar al carrito</button>
+      </div>
+
+      <div class="card" data-aos="fade-right">
+        <img src="images/aceite.jpeg" alt="Aceite de CBD">
+        <h3>Aceite de CBD</h3>
+        <p>Relájate y reduce el estrés con CBD de calidad.</p>
+        <p class="precio">$480</p>
+        <button 
+          class="agregar-carrito"
+          data-nombre="Aceite de CBD" 
+          data-precio="480"
+          data-cantidad="1"
+        >Agregar al carrito</button>
+      </div>   
+
+      <div class="card" data-aos="fade-left">
+        <img src="images/probioticos.jpeg" alt="Probióticos naturales">
+        <h3>Probióticos Naturales</h3>
+        <p>Mejora tu digestión y bienestar intestinal.</p>
+        <p class="precio">$390</p>
+        <button 
+          class="agregar-carrito"
+          data-nombre="Probióticos Naturales" 
+          data-precio="390"
+          data-cantidad="1"
+        >Agregar al carrito</button>
+      </div>   
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Beneficios -->
+<section id="beneficios" class="beneficios" data-aos="fade-up">
+  <div class="container">
+    <h2 data-aos="fade-up" data-aos-delay="100">¿Por qué elegir SaludTotal?</h2>
+    <ul>
+      <li data-aos="fade-up" data-aos-delay="200"><i class="fas fa-leaf"></i> Productos 100% naturales</li>
+      <li data-aos="fade-up" data-aos-delay="300"><i class="fas fa-truck"></i> Envíos rápidos a todo el país</li>
+      <li data-aos="fade-up" data-aos-delay="400"><i class="fas fa-comments"></i> Asesoría gratuita personalizada</li>
+      <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-lock"></i> Pagos seguros</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- Testimonios -->
+<section id="testimonios" class="testimonios" data-aos="fade-up">
+  <div class="container">
+    <h2 data-aos="fade-up" data-aos-delay="100">Lo que dicen nuestros clientes</h2>
+
+    <div class="testimonial-slider" data-aos="fade-up" data-aos-delay="200">
+      <div class="slide active">
+        <p>"Desde que uso los productos de SaludTotal, me siento con más energía y vitalidad. ¡Excelente calidad!"</p>
+        <h4>– Mariana G.</h4>
+      </div>
+      <div class="slide">
+        <p>"El aceite de CBD me ayudó muchísimo con mi ansiedad. Lo recomiendo al 100%."</p>
+        <h4>– Carlos R.</h4>
+      </div>
+      <div class="slide">
+        <p>"Muy buen servicio al cliente y productos realmente efectivos. Volveré a comprar."</p>
+        <h4>– Laura P.</h4>
+      </div>
+
+      <!-- Botones de navegación -->
+      <div class="slider-nav" data-aos="fade-up" data-aos-delay="300">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contacto">
+    <div class="container">
+      <h2>Contáctanos</h2>
+      <form id="formulario">
+        <input type="text" placeholder="Tu nombre" required />
+        <input type="email" placeholder="Tu correo" required />
+        <textarea placeholder="Tu mensaje"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 SaludTotal - Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+<!-- Botón para volver arriba -->
+<a href="#" class="scroll-to-top" title="Volver al inicio">
+  <i class="fas fa-chevron-up"></i>
+</a>
+
+<!-- BOTÓN WHATSAPP con animación -->
+<a href="https://wa.me/5211234567890" target="_blank" class="whatsapp-float" title="Envíanos un mensaje" data-aos="fade-left">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+
+  
+  <script>
+    const slides = document.querySelectorAll('.testimonial-slider .slide');
+    const prevBtn = document.querySelector('.slider-nav .prev');
+    const nextBtn = document.querySelector('.slider-nav .next');
+    let currentSlide = 0;
+  
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+  
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+  
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+  
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+  
+    // Deslizar automáticamente cada 6 segundos
+    setInterval(nextSlide, 6000);
+  </script>
+  
+
+  <script>
+    // Scroll suave al hacer clic en los enlaces del menú
+    document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+      enlace.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+  
+  <!-- AOS (Animate On Scroll) -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // Duración de la animación en milisegundos
+    once: true      // Solo animar una vez al hacer scroll
+  });
+</script>
+
+<script>
+  const scrollTopBtn = document.querySelector('.scroll-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+  });
+
+  // Scroll suave hacia arriba
+  scrollTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
+<script>
+  const scrollTopBtn = document.querySelector('.scroll-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+  });
+
+  scrollTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
