@@ -16,6 +16,10 @@
 <header class="header-delgado">
   <div class="container">
     <h1 class="logo">SaludTotal</h1>
+    <!-- Botón hamburguesa -->
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
     <nav>
       <ul>
         <li><a href="#productos">Productos</a></li>
@@ -277,6 +281,16 @@
     });
   });
 </script>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.querySelector('.header-delgado nav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
 
 
 <script src="script.js"></script>

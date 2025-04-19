@@ -75,6 +75,39 @@ html {
   color: #2b7a0b;
 }
 
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #2b7a0b;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+
+  .header-delgado nav {
+    display: none; /* Ocultar por defecto */
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 0;
+  }
+
+  .header-delgado nav.active {
+    display: flex; /* Mostrar cuando se activa */
+  }
+}
+
+
 /* ÍCONO DEL CARRITO */
 .icono-carrito {
   margin-left: 20px;
